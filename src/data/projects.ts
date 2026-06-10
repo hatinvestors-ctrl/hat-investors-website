@@ -203,12 +203,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    type: "coming-soon",
-    title: "450 S Volusia St",
-    location: "Saint Augustine, FL 32084",
-    heroImage: "/projects/volusia-coming-soon.jpg",
-  },
-  {
     type: "flip",
     title: "1012 Beckner Avenue",
     location: "Jacksonville, FL 32218",
@@ -351,6 +345,18 @@ export const projects: Project[] = [
       { src: "/projects/kingsbury-before-bedroom-2.jpg",  alt: "4757 Kingsbury St - Before Bedroom 2", type: "before" },
       { src: "/projects/kingsbury-after-bedroom-2.jpg",   alt: "4757 Kingsbury St - After Bedroom 2",  type: "after" },
     ],
+  },
+  {
+    type: "coming-soon",
+    title: "450 S Volusia St",
+    location: "Saint Augustine, FL 32084",
+    heroImage: "/projects/volusia-coming-soon.jpg",
+  },
+  {
+    type: "coming-soon",
+    title: "165 Toledo St",
+    location: "Saint Augustine, FL 32084",
+    heroImage: "/projects/volusia-coming-soon.jpg",
   },
   {
     type: "flip",
