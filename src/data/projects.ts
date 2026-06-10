@@ -393,16 +393,30 @@ export const projects: Project[] = [
     description: "Description coming soon.",
     status: "TBD",
     images: [
-      { src: "/projects/parrish-after-exterior.jpg", alt: "1550 Parrish Pl - After Exterior", type: "after" },
-      { src: "/projects/parrish-after-entry-1.jpg", alt: "1550 Parrish Pl - After Entry", type: "after" },
-      { src: "/projects/parrish-after-entry-2.jpg", alt: "1550 Parrish Pl - After Office/Entry", type: "after" },
-      { src: "/projects/parrish-after-kitchen-1.jpg", alt: "1550 Parrish Pl - After Kitchen", type: "after" },
-      { src: "/projects/parrish-after-kitchen-2.jpg", alt: "1550 Parrish Pl - After Kitchen View 2", type: "after" },
-      { src: "/projects/parrish-after-kitchen-3.jpg", alt: "1550 Parrish Pl - After Kitchen View 3", type: "after" },
-      { src: "/projects/parrish-after-bathroom.jpg", alt: "1550 Parrish Pl - After Bathroom", type: "after" },
-      { src: "/projects/parrish-after-bedroom.jpg", alt: "1550 Parrish Pl - After Bedroom", type: "after" },
-      { src: "/projects/parrish-after-backyard.jpg", alt: "1550 Parrish Pl - After Backyard", type: "after" },
+      // Exterior
+      { src: "/projects/parrish-before-exterior-1.jpg", alt: "1550 Parrish Pl - Before Exterior", type: "before" },
+      { src: "/projects/parrish-after-exterior.jpg",    alt: "1550 Parrish Pl - After Exterior",  type: "after" },
+      { src: "/projects/parrish-before-exterior-2.jpg", alt: "1550 Parrish Pl - Before Exterior Angle", type: "before" },
+      // Living Room
+      { src: "/projects/parrish-before-living.jpg",     alt: "1550 Parrish Pl - Before Living Room with Fireplace", type: "before" },
+      { src: "/projects/parrish-after-entry-1.jpg",     alt: "1550 Parrish Pl - After Living Room", type: "after" },
+      { src: "/projects/parrish-after-entry-2.jpg",     alt: "1550 Parrish Pl - After Living Room View 2", type: "after" },
+      // Kitchen
+      { src: "/projects/parrish-before-kitchen.jpg",    alt: "1550 Parrish Pl - Before Kitchen", type: "before" },
+      { src: "/projects/parrish-after-kitchen-1.jpg",   alt: "1550 Parrish Pl - After Kitchen",  type: "after" },
+      { src: "/projects/parrish-after-kitchen-2.jpg",   alt: "1550 Parrish Pl - After Kitchen View 2", type: "after" },
+      { src: "/projects/parrish-after-kitchen-3.jpg",   alt: "1550 Parrish Pl - After Kitchen View 3", type: "after" },
+      // Bathroom
+      { src: "/projects/parrish-before-bathroom.jpg",   alt: "1550 Parrish Pl - Before Bathroom", type: "before" },
+      { src: "/projects/parrish-after-bathroom.jpg",    alt: "1550 Parrish Pl - After Bathroom",  type: "after" },
+      // Bedroom
+      { src: "/projects/parrish-before-bedroom.jpg",    alt: "1550 Parrish Pl - Before Bedroom", type: "before" },
+      { src: "/projects/parrish-after-bedroom.jpg",     alt: "1550 Parrish Pl - After Bedroom",  type: "after" },
+      // Backyard / Sunroom
+      { src: "/projects/parrish-before-sunroom.jpg",    alt: "1550 Parrish Pl - Before Sunroom", type: "before" },
       { src: "/projects/parrish-after-outdoor-bar.jpg", alt: "1550 Parrish Pl - After Outdoor Bar", type: "after" },
+      { src: "/projects/parrish-before-backyard.jpg",   alt: "1550 Parrish Pl - Before Backyard", type: "before" },
+      { src: "/projects/parrish-after-backyard.jpg",    alt: "1550 Parrish Pl - After Backyard",  type: "after" },
     ],
   },
 ];
