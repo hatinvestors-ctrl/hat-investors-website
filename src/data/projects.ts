@@ -220,23 +220,40 @@ export const projects: Project[] = [
     description: "Solid brick ranch in Jacksonville completely transformed from top to bottom. The open-concept kitchen features white shaker cabinets, quartz countertops, stainless steel appliances, and a breakfast bar. Both bathrooms are fully updated with marble-tile showers, LED mirrors, and matte black fixtures. New LVP flooring runs throughout. The home also features a large bonus room — ideal as a second living space, home office, or flex room — plus a private backyard with a storage shed.",
     status: "Active on Market — $229,900",
     images: [
-      { src: "/projects/beckner-after-exterior-1.jpg", alt: "1012 Beckner Ave - After Exterior", type: "after" },
-      { src: "/projects/beckner-after-exterior-2.jpg", alt: "1012 Beckner Ave - After Exterior Angle", type: "after" },
-      { src: "/projects/beckner-after-living-1.jpg", alt: "1012 Beckner Ave - After Living Room", type: "after" },
-      { src: "/projects/beckner-after-living-2.jpg", alt: "1012 Beckner Ave - After Living Room View 2", type: "after" },
-      { src: "/projects/beckner-after-kitchen-1.jpg", alt: "1012 Beckner Ave - After Kitchen with Breakfast Bar", type: "after" },
-      { src: "/projects/beckner-after-kitchen-2.jpg", alt: "1012 Beckner Ave - After Kitchen Full View", type: "after" },
+      // Exterior
+      { src: "/projects/beckner-before-exterior-1.webp", alt: "1012 Beckner Ave - Before Exterior", type: "before" },
+      { src: "/projects/beckner-after-exterior-1.jpg",   alt: "1012 Beckner Ave - After Exterior",  type: "after" },
+      { src: "/projects/beckner-after-exterior-2.jpg",   alt: "1012 Beckner Ave - After Exterior Angle", type: "after" },
+      // Living Room
+      { src: "/projects/beckner-before-living.webp",     alt: "1012 Beckner Ave - Before Living Room", type: "before" },
+      { src: "/projects/beckner-after-living-1.jpg",     alt: "1012 Beckner Ave - After Living Room",  type: "after" },
+      { src: "/projects/beckner-after-living-2.jpg",     alt: "1012 Beckner Ave - After Living Room View 2", type: "after" },
+      // Kitchen
+      { src: "/projects/beckner-before-kitchen-1.webp",  alt: "1012 Beckner Ave - Before Kitchen", type: "before" },
+      { src: "/projects/beckner-after-kitchen-1.jpg",    alt: "1012 Beckner Ave - After Kitchen with Breakfast Bar", type: "after" },
+      { src: "/projects/beckner-before-kitchen-2.webp",  alt: "1012 Beckner Ave - Before Kitchen View 2", type: "before" },
+      { src: "/projects/beckner-after-kitchen-2.jpg",    alt: "1012 Beckner Ave - After Kitchen Full View", type: "after" },
       { src: "/projects/beckner-after-kitchen-dining.jpg", alt: "1012 Beckner Ave - After Kitchen and Dining", type: "after" },
-      { src: "/projects/beckner-after-dining.jpg", alt: "1012 Beckner Ave - After Dining Area", type: "after" },
-      { src: "/projects/beckner-after-master-bedroom.jpg", alt: "1012 Beckner Ave - After Master Bedroom", type: "after" },
+      { src: "/projects/beckner-after-dining.jpg",       alt: "1012 Beckner Ave - After Dining Area", type: "after" },
+      // Master Bedroom
+      { src: "/projects/beckner-before-master-bedroom.webp", alt: "1012 Beckner Ave - Before Master Bedroom", type: "before" },
+      { src: "/projects/beckner-after-master-bedroom.jpg",   alt: "1012 Beckner Ave - After Master Bedroom",  type: "after" },
       { src: "/projects/beckner-after-master-bathroom-view.jpg", alt: "1012 Beckner Ave - After Master with En-Suite", type: "after" },
-      { src: "/projects/beckner-after-bathroom.jpg", alt: "1012 Beckner Ave - After Bathroom", type: "after" },
-      { src: "/projects/beckner-after-bedroom-2.jpg", alt: "1012 Beckner Ave - After Bedroom 2", type: "after" },
-      { src: "/projects/beckner-after-bedroom-3.jpg", alt: "1012 Beckner Ave - After Bedroom 3", type: "after" },
-      { src: "/projects/beckner-after-bonus-room-1.jpg", alt: "1012 Beckner Ave - After Bonus Room", type: "after" },
+      // Bathroom
+      { src: "/projects/beckner-before-bathroom.webp",   alt: "1012 Beckner Ave - Before Bathroom", type: "before" },
+      { src: "/projects/beckner-after-bathroom.jpg",     alt: "1012 Beckner Ave - After Bathroom",  type: "after" },
+      // Bedroom 2
+      { src: "/projects/beckner-before-bedroom-2.webp",  alt: "1012 Beckner Ave - Before Bedroom 2", type: "before" },
+      { src: "/projects/beckner-after-bedroom-2.jpg",    alt: "1012 Beckner Ave - After Bedroom 2",  type: "after" },
+      { src: "/projects/beckner-after-bedroom-3.jpg",    alt: "1012 Beckner Ave - After Bedroom 3",  type: "after" },
+      // Bonus Room
+      { src: "/projects/beckner-before-bonus-room.webp", alt: "1012 Beckner Ave - Before Bonus Room", type: "before" },
+      { src: "/projects/beckner-after-bonus-room-1.jpg", alt: "1012 Beckner Ave - After Bonus Room",  type: "after" },
       { src: "/projects/beckner-after-bonus-room-2.jpg", alt: "1012 Beckner Ave - After Bonus Room View 2", type: "after" },
-      { src: "/projects/beckner-after-rear-1.jpg", alt: "1012 Beckner Ave - After Rear Exterior", type: "after" },
-      { src: "/projects/beckner-after-rear-2.jpg", alt: "1012 Beckner Ave - After Rear View", type: "after" },
+      // Rear
+      { src: "/projects/beckner-before-rear.webp",       alt: "1012 Beckner Ave - Before Rear", type: "before" },
+      { src: "/projects/beckner-after-rear-1.jpg",       alt: "1012 Beckner Ave - After Rear Exterior", type: "after" },
+      { src: "/projects/beckner-after-rear-2.jpg",       alt: "1012 Beckner Ave - After Rear View", type: "after" },
     ],
   },
   {
