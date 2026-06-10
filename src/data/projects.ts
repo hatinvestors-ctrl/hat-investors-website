@@ -364,18 +364,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    type: "coming-soon",
-    title: "450 S Volusia St",
-    location: "Saint Augustine, FL 32084",
-    heroImage: "/projects/volusia-coming-soon.jpg",
-  },
-  {
-    type: "coming-soon",
-    title: "165 Toledo St",
-    location: "Saint Augustine, FL 32084",
-    heroImage: "/projects/volusia-coming-soon.jpg",
-  },
-  {
     type: "flip",
     title: "1550 Parrish Pl",
     location: "32205 Jacksonville FL",
@@ -418,5 +406,17 @@ export const projects: Project[] = [
       { src: "/projects/parrish-before-backyard.jpg",   alt: "1550 Parrish Pl - Before Backyard", type: "before" },
       { src: "/projects/parrish-after-backyard.jpg",    alt: "1550 Parrish Pl - After Backyard",  type: "after" },
     ],
+  },
+  {
+    type: "coming-soon",
+    title: "450 S Volusia St",
+    location: "Saint Augustine, FL 32084",
+    heroImage: "/projects/volusia-coming-soon.jpg",
+  },
+  {
+    type: "coming-soon",
+    title: "165 Toledo St",
+    location: "Saint Augustine, FL 32084",
+    heroImage: "/projects/volusia-coming-soon.jpg",
   },
 ];
