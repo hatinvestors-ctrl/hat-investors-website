@@ -1,197 +1,177 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import { Reveal } from "@/components/Reveal";
 
-const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+export default function Contact() {
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill out all required fields.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. We'll get back to you soon.",
-    });
-
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+    setSubmitted(true);
   };
 
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">Contact Us</h1>
-          <p className="text-base md:text-lg max-w-3xl mx-auto opacity-90">
-            Have questions? Want to partner with us? We'd love to hear from you.
-          </p>
+
+      {/* ── HERO ─────────────────────────────────────────────────── */}
+      <section className="bg-navy-deep py-32 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[200px] bg-[hsl(var(--gold))]/6 blur-3xl rounded-full pointer-events-none" />
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <Reveal>
+            <span className="gold-line-center mb-6" />
+            <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mt-4 mb-4">
+              Get in Touch
+            </h1>
+            <p className="text-lg text-white/65 max-w-xl mx-auto">
+              Ready to sell, invest, or just have questions? We'd love to hear from you.
+              Expect a response within one business day.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      {/* Contact Form & Info */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Contact Form */}
-            <Card>
-              <CardContent className="p-8">
-                <h2 className="text-xl md:text-2xl font-heading font-bold mb-6">Send Us a Message</h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <Label htmlFor="name">Name *</Label>
-                    <Input
-                      id="name"
-                      type="text"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Your name"
-                      required
-                    />
-                  </div>
+      {/* ── CONTENT ──────────────────────────────────────────────── */}
+      <section className="bg-warm-white py-24">
+        <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
+          <div className="grid lg:grid-cols-5 gap-10">
 
-                  <div>
-                    <Label htmlFor="email">Email *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="your@email.com"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="phone">Phone (Optional)</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="(904) 555-0123"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="message">Message *</Label>
-                    <Textarea
-                      id="message"
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Tell us how we can help..."
-                      rows={5}
-                      required
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
-                  >
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-
-            {/* Contact Info */}
-            <div className="space-y-8">
+            {/* Contact info */}
+            <Reveal direction="left" className="lg:col-span-2 space-y-5">
               <div>
-                <h2 className="text-xl md:text-2xl font-heading font-bold mb-6">Get In Touch</h2>
-                <p className="text-sm text-muted-foreground mb-6">
-                  Whether you have questions about our process, want to discuss a partnership
-                  opportunity, or just want to learn more about what we do, we're here to help.
-                </p>
+                <span className="gold-line mb-4" />
+                <h2 className="text-2xl font-heading font-bold text-[hsl(var(--navy-deep))] mt-4 mb-6">
+                  Contact Info
+                </h2>
               </div>
 
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="h-6 w-6 text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="font-heading font-bold mb-2">Email</h3>
-                      <p className="text-sm text-muted-foreground mb-1">
-                        <a
-                          href="mailto:hemi@hatinvestors.com"
-                          className="text-accent hover:underline"
-                        >
-                          hemi@hatinvestors.com
-                        </a>
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        <a
-                          href="mailto:tom@hatinvestors.com"
-                          className="text-accent hover:underline"
-                        >
-                          tom@hatinvestors.com
-                        </a>
-                      </p>
-                    </div>
+              {[
+                { icon: <Phone className="h-5 w-5" />, label: "Phone",       value: "(904) 712-0271",       href: "tel:9047120271" },
+                { icon: <Mail className="h-5 w-5" />,  label: "Email (Hemi)", value: "hemi@hatinvestors.com", href: "mailto:hemi@hatinvestors.com" },
+                { icon: <Mail className="h-5 w-5" />,  label: "Email (Tom)",  value: "tom@hatinvestors.com",  href: "mailto:tom@hatinvestors.com" },
+                { icon: <MapPin className="h-5 w-5" />, label: "Location",    value: "Jacksonville, FL",      href: null },
+              ].map(({ icon, label, value, href }) => (
+                <div key={label} className="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-sm border border-gray-100 card-glow group">
+                  <div className="w-11 h-11 rounded-xl bg-[hsl(var(--gold))]/10 flex items-center justify-center text-[hsl(var(--gold))] shrink-0 group-hover:bg-[hsl(var(--gold))]/20 group-hover:scale-110 transition-all duration-300">
+                    {icon}
                   </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="h-6 w-6 text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="font-heading font-bold mb-2">Phone</h3>
-                      <p className="text-sm text-muted-foreground">
-                        <a href="tel:9047120271" className="text-accent hover:underline">
-                          (904) 712-0271
-                        </a>
-                      </p>
-                    </div>
+                  <div>
+                    <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-1">{label}</p>
+                    {href ? (
+                      <a href={href} className="text-[hsl(var(--navy-deep))] font-semibold hover:text-[hsl(var(--gold))] transition-colors">
+                        {value}
+                      </a>
+                    ) : (
+                      <p className="text-[hsl(var(--navy-deep))] font-semibold">{value}</p>
+                    )}
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              ))}
 
-              <div className="bg-secondary rounded-lg p-6">
-                <h3 className="font-heading font-bold mb-3">Looking to Sell Your Property?</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  For property offers and inquiries, please use our dedicated form to get started
-                  quickly.
-                </p>
-                <Link to="/sell-your-house">
-                  <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
-                    Get a Cash Offer
-                  </Button>
-                </Link>
+              <div className="bg-[hsl(var(--navy-deep))] rounded-2xl p-6 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-grid-pattern opacity-15 rounded-2xl pointer-events-none" />
+                <p className="text-[hsl(var(--gold))] font-heading font-bold text-lg mb-2 relative z-10">Office Hours</p>
+                <p className="text-white/65 text-sm relative z-10">Monday – Friday: 9am – 6pm</p>
+                <p className="text-white/65 text-sm relative z-10">Saturday: By appointment</p>
               </div>
-            </div>
+            </Reveal>
+
+            {/* Form */}
+            <Reveal direction="right" delay={100} className="lg:col-span-3">
+              <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-10">
+                {submitted ? (
+                  <div className="text-center py-16">
+                    <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
+                      <CheckCircle className="h-10 w-10 text-green-500" />
+                    </div>
+                    <h3 className="text-2xl font-heading font-bold text-[hsl(var(--navy-deep))] mb-3">
+                      Message Sent!
+                    </h3>
+                    <p className="text-gray-500">
+                      Thanks for reaching out. We'll get back to you within one business day.
+                    </p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div>
+                      <span className="gold-line mb-4" />
+                      <h2 className="text-2xl font-heading font-bold text-[hsl(var(--navy-deep))] mt-4 mb-6">
+                        Send Us a Message
+                      </h2>
+                    </div>
+
+                    <div className="grid sm:grid-cols-2 gap-5">
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-1.5">Full Name *</label>
+                        <input
+                          name="name"
+                          required
+                          value={form.name}
+                          onChange={handleChange}
+                          placeholder="John Smith"
+                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--gold))]/30 focus:border-[hsl(var(--gold))] transition-all text-sm bg-gray-50/50 hover:bg-white"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-1.5">Phone</label>
+                        <input
+                          name="phone"
+                          value={form.phone}
+                          onChange={handleChange}
+                          placeholder="(904) 555-0123"
+                          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--gold))]/30 focus:border-[hsl(var(--gold))] transition-all text-sm bg-gray-50/50 hover:bg-white"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-1.5">Email *</label>
+                      <input
+                        name="email"
+                        type="email"
+                        required
+                        value={form.email}
+                        onChange={handleChange}
+                        placeholder="you@example.com"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--gold))]/30 focus:border-[hsl(var(--gold))] transition-all text-sm bg-gray-50/50 hover:bg-white"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-1.5">Message *</label>
+                      <textarea
+                        name="message"
+                        required
+                        rows={5}
+                        value={form.message}
+                        onChange={handleChange}
+                        placeholder="Tell us about your property or inquiry…"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--gold))]/30 focus:border-[hsl(var(--gold))] transition-all text-sm resize-none bg-gray-50/50 hover:bg-white"
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="btn-gold w-full py-4 rounded-xl flex items-center justify-center gap-2 text-base"
+                    >
+                      <Send className="h-5 w-5" /> Send Message
+                    </button>
+
+                    <p className="text-xs text-gray-400 text-center">
+                      We respect your privacy and never share your information.
+                    </p>
+                  </form>
+                )}
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
     </div>
   );
-};
-
-export default Contact;
+}

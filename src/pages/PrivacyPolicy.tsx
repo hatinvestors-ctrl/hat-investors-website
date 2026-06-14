@@ -1,9 +1,10 @@
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen">
-      <section className="py-20 bg-primary text-primary-foreground">
+      <section className="py-24 bg-navy-deep text-white text-center">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-center">Privacy Policy</h1>
+          <span className="gold-line-center mb-6" />
+          <h1 className="text-4xl md:text-5xl font-heading font-bold mt-4">Privacy Policy</h1>
         </div>
       </section>
 
