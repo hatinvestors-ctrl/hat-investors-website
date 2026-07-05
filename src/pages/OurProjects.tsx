@@ -113,7 +113,7 @@ const OurProjects = () => {
                 <span className="text-white font-semibold text-sm">{rentalCount} Rentals</span>
               </div>
               <div className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/8 border border-white/15">
-                <span className="text-white/70 text-sm">${rentalCount * 1350}/mo rental income</span>
+                <span className="text-white/70 text-sm">$2,700/mo rental income</span>
               </div>
             </div>
           </Reveal>
