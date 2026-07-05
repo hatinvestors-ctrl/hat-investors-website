@@ -43,6 +43,8 @@ export type BRRRRProject = {
   highlights: string;
   description: string;
   status: string;
+  hideFinancials?: boolean;
+  pairedWith?: string;
   images: ProjectImage[];
 };
 
@@ -63,6 +65,50 @@ export type Project = FlipProject | BRRRRProject | ComingSoonProject;
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const projects: Project[] = [
+  // ── RENTAL PORTFOLIO ────────────────────────────────────────────────────────
+  {
+    type: "brrrr",
+    title: "2058 W 40th St",
+    location: "Jacksonville, FL 32209",
+    heroImage: "/projects/w40th-2058-hero.jpg",
+    purchase: "$71,000",
+    renovation: "Minor cosmetics + city sewer connection",
+    allIn: "TBD",
+    marketValue: "TBD",
+    monthlyRent: "$1,350",
+    monthlyCosts: "TBD",
+    cashFlow: "TBD",
+    equity: "TBD",
+    layout: "Single-family rental",
+    highlights: "Purchased below market value and stabilized quickly. Connected to city sewer system, full cosmetic refresh, and rented within weeks of acquisition.",
+    description: "Part of a two-property portfolio acquisition on W 40th St. This home was connected to city sewer as a key value-add improvement, bringing it up to modern infrastructure standards. Minor cosmetic updates throughout — new paint, flooring refresh, and fixtures. Tenant in place paying $1,350/month.",
+    status: "Rented · Refinancing Q3 2026",
+    hideFinancials: true,
+    pairedWith: "2050 W 40th St",
+    images: [],
+  },
+  {
+    type: "brrrr",
+    title: "2050 W 40th St",
+    location: "Jacksonville, FL 32209",
+    heroImage: "/projects/w40th-2050-hero.jpg",
+    purchase: "$67,000",
+    renovation: "Minor cosmetics + new septic system",
+    allIn: "TBD",
+    marketValue: "TBD",
+    monthlyRent: "$1,350",
+    monthlyCosts: "TBD",
+    cashFlow: "TBD",
+    equity: "TBD",
+    layout: "Single-family rental",
+    highlights: "Acquired as part of a side-by-side portfolio deal. New septic system installed, full cosmetic renovation completed, and property rented immediately at $1,350/month.",
+    description: "Adjacent to 2058 W 40th St, this property was acquired in the same portfolio deal. A brand-new septic system was installed along with cosmetic updates throughout. The home was quickly renovated and tenant-ready, generating immediate rental income at $1,350/month.",
+    status: "Rented · Refinancing Q3 2026",
+    hideFinancials: true,
+    pairedWith: "2058 W 40th St",
+    images: [],
+  },
+  // ── FLIP PORTFOLIO ───────────────────────────────────────────────────────────
   {
     type: "flip",
     title: "6226 W Pennant Dr W",
