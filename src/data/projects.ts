@@ -491,6 +491,12 @@ export const projects: Project[] = [
   },
   {
     type: "coming-soon",
+    title: "6552 Bartholf Ave",
+    location: "Jacksonville, FL 32210",
+    heroImage: "/projects/volusia-coming-soon.jpg",
+  },
+  {
+    type: "coming-soon",
     title: "450 S Volusia St",
     location: "Saint Augustine, FL 32084",
     heroImage: "/projects/volusia-coming-soon.jpg",
