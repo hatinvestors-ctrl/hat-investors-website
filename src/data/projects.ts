@@ -490,18 +490,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    type: "coming-soon",
-    title: "6552 Bartholf Ave",
-    location: "Jacksonville, FL 32210",
-    heroImage: "/projects/volusia-coming-soon.jpg",
-  },
-  {
-    type: "coming-soon",
-    title: "450 S Volusia St",
-    location: "Saint Augustine, FL 32084",
-    heroImage: "/projects/volusia-coming-soon.jpg",
-  },
-  {
     type: "flip",
     title: "165 Toledo St",
     location: "Saint Augustine, FL 32084",
@@ -556,5 +544,17 @@ export const projects: Project[] = [
       // Garage
       { src: "/projects/toledo/toledo-after-garage.jpg",            alt: "165 Toledo St - After: Attached Garage",                    type: "after" },
     ],
+  },
+  {
+    type: "coming-soon",
+    title: "6552 Bartholf Ave",
+    location: "Jacksonville, FL 32210",
+    heroImage: "/projects/volusia-coming-soon.jpg",
+  },
+  {
+    type: "coming-soon",
+    title: "450 S Volusia St",
+    location: "Saint Augustine, FL 32084",
+    heroImage: "/projects/volusia-coming-soon.jpg",
   },
 ];
