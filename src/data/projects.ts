@@ -523,8 +523,6 @@ export const projects: Project[] = [
       // Exterior
       { src: "/projects/toledo/toledo-before-exterior-front.jpg",   alt: "165 Toledo St - Before: Front Exterior",                    type: "before" },
       { src: "/projects/toledo/toledo-after-exterior-front.jpg",    alt: "165 Toledo St - After: Front Exterior",                     type: "after" },
-      { src: "/projects/toledo/toledo-after-exterior-front-2.jpg",  alt: "165 Toledo St - After: Front Exterior View 2",              type: "after" },
-      { src: "/projects/toledo/toledo-after-exterior-angle.jpg",    alt: "165 Toledo St - After: Exterior Angle",                     type: "after" },
       // Rear / Backyard
       { src: "/projects/toledo/toledo-before-rear.jpg",             alt: "165 Toledo St - Before: Rear Exterior",                     type: "before" },
       { src: "/projects/toledo/toledo-after-rear.jpg",              alt: "165 Toledo St - After: Rear Exterior",                      type: "after" },
