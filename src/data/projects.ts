@@ -520,22 +520,43 @@ export const projects: Project[] = [
     status: "Renovation Complete — Active on Market",
     hideFinancials: true,
     images: [
-      { src: "/projects/toledo/toledo-after-exterior-front.jpg",    alt: "165 Toledo St - After: Front Exterior",          type: "after" },
-      { src: "/projects/toledo/toledo-after-exterior-front-2.jpg",  alt: "165 Toledo St - After: Front Exterior View 2",   type: "after" },
-      { src: "/projects/toledo/toledo-after-exterior-angle.jpg",    alt: "165 Toledo St - After: Exterior Angle",          type: "after" },
-      { src: "/projects/toledo/toledo-after-living-room.jpg",       alt: "165 Toledo St - After: Open Concept Living Room", type: "after" },
-      { src: "/projects/toledo/toledo-after-kitchen.jpg",           alt: "165 Toledo St - After: Kitchen with Breakfast Bar", type: "after" },
-      { src: "/projects/toledo/toledo-after-kitchen-dining.jpg",    alt: "165 Toledo St - After: Kitchen and Dining Area", type: "after" },
-      { src: "/projects/toledo/toledo-after-dining.jpg",            alt: "165 Toledo St - After: Dining Room",             type: "after" },
-      { src: "/projects/toledo/toledo-after-master-bedroom.jpg",    alt: "165 Toledo St - After: Master Bedroom",          type: "after" },
-      { src: "/projects/toledo/toledo-after-master-bedroom-2.jpg",  alt: "165 Toledo St - After: Master Bedroom View 2",   type: "after" },
-      { src: "/projects/toledo/toledo-after-master-bedroom-3.jpg",  alt: "165 Toledo St - After: Master Bedroom View 3",   type: "after" },
+      // Exterior
+      { src: "/projects/toledo/toledo-before-exterior-front.jpg",   alt: "165 Toledo St - Before: Front Exterior",                    type: "before" },
+      { src: "/projects/toledo/toledo-after-exterior-front.jpg",    alt: "165 Toledo St - After: Front Exterior",                     type: "after" },
+      { src: "/projects/toledo/toledo-after-exterior-front-2.jpg",  alt: "165 Toledo St - After: Front Exterior View 2",              type: "after" },
+      { src: "/projects/toledo/toledo-after-exterior-angle.jpg",    alt: "165 Toledo St - After: Exterior Angle",                     type: "after" },
+      // Rear / Backyard
+      { src: "/projects/toledo/toledo-before-rear.jpg",             alt: "165 Toledo St - Before: Rear Exterior",                     type: "before" },
+      { src: "/projects/toledo/toledo-after-rear.jpg",              alt: "165 Toledo St - After: Rear Exterior",                      type: "after" },
+      { src: "/projects/toledo/toledo-before-backyard.jpg",         alt: "165 Toledo St - Before: Backyard",                          type: "before" },
+      { src: "/projects/toledo/toledo-after-backyard.jpg",          alt: "165 Toledo St - After: Backyard",                           type: "after" },
+      // Living Room
+      { src: "/projects/toledo/toledo-before-living-room.jpg",      alt: "165 Toledo St - Before: Living Room (salmon walls, dated)", type: "before" },
+      { src: "/projects/toledo/toledo-after-living-room.jpg",       alt: "165 Toledo St - After: Open Concept Living Room",           type: "after" },
+      // Kitchen
+      { src: "/projects/toledo/toledo-before-kitchen.jpg",          alt: "165 Toledo St - Before: Kitchen (teal cabinets)",           type: "before" },
+      { src: "/projects/toledo/toledo-after-kitchen.jpg",           alt: "165 Toledo St - After: Kitchen with Breakfast Bar",         type: "after" },
+      // Dining / Florida Room
+      { src: "/projects/toledo/toledo-before-dining.jpg",           alt: "165 Toledo St - Before: Dining Room with Slider",           type: "before" },
+      { src: "/projects/toledo/toledo-after-dining.jpg",            alt: "165 Toledo St - After: Dining Room",                        type: "after" },
+      { src: "/projects/toledo/toledo-before-dining-2.jpg",         alt: "165 Toledo St - Before: Dining and Entry Door",             type: "before" },
+      { src: "/projects/toledo/toledo-after-kitchen-dining.jpg",    alt: "165 Toledo St - After: Kitchen and Dining Open Flow",       type: "after" },
+      { src: "/projects/toledo/toledo-before-florida-room.jpg",     alt: "165 Toledo St - Before: Florida Room (old carpet)",         type: "before" },
+      // Master Bedroom
+      { src: "/projects/toledo/toledo-after-master-bedroom.jpg",    alt: "165 Toledo St - After: Master Bedroom",                     type: "after" },
+      { src: "/projects/toledo/toledo-after-master-bedroom-2.jpg",  alt: "165 Toledo St - After: Master Bedroom View 2",              type: "after" },
+      { src: "/projects/toledo/toledo-after-master-bedroom-3.jpg",  alt: "165 Toledo St - After: Master Bedroom View 3",              type: "after" },
+      // Master Bathroom
+      { src: "/projects/toledo/toledo-before-master-bathroom.jpg",  alt: "165 Toledo St - Before: Bathroom (floral wallpaper)",       type: "before" },
       { src: "/projects/toledo/toledo-after-master-bathroom.jpg",   alt: "165 Toledo St - After: Master Bathroom with Marble Tile Shower", type: "after" },
-      { src: "/projects/toledo/toledo-after-bathroom-vanity.jpg",   alt: "165 Toledo St - After: Bathroom Vanity with LED Mirror", type: "after" },
-      { src: "/projects/toledo/toledo-after-bedroom-2.jpg",         alt: "165 Toledo St - After: Second Bedroom",          type: "after" },
-      { src: "/projects/toledo/toledo-after-garage.jpg",            alt: "165 Toledo St - After: Attached Garage",         type: "after" },
-      { src: "/projects/toledo/toledo-after-backyard.jpg",          alt: "165 Toledo St - After: Backyard",                type: "after" },
-      { src: "/projects/toledo/toledo-after-rear.jpg",              alt: "165 Toledo St - After: Rear Exterior",           type: "after" },
+      // Hall Bathroom
+      { src: "/projects/toledo/toledo-before-bathroom.jpg",         alt: "165 Toledo St - Before: Hall Bathroom (striped wallpaper)", type: "before" },
+      { src: "/projects/toledo/toledo-after-bathroom-vanity.jpg",   alt: "165 Toledo St - After: Bathroom Vanity with LED Mirror",    type: "after" },
+      // Second Bedroom
+      { src: "/projects/toledo/toledo-before-bedroom-2.jpg",        alt: "165 Toledo St - Before: Bedroom with Louvered Closet",      type: "before" },
+      { src: "/projects/toledo/toledo-after-bedroom-2.jpg",         alt: "165 Toledo St - After: Second Bedroom",                     type: "after" },
+      // Garage
+      { src: "/projects/toledo/toledo-after-garage.jpg",            alt: "165 Toledo St - After: Attached Garage",                    type: "after" },
     ],
   },
 ];
