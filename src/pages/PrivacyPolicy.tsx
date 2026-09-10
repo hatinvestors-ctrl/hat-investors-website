@@ -112,20 +112,9 @@ const PrivacyPolicy = () => {
               <p className="text-muted-foreground">
                 If you have any questions about this Privacy Policy, please contact us:
               </p>
-              <ul className="list-none text-muted-foreground space-y-2 mt-3">
-                <li>
-                  <strong>Email:</strong>{" "}
-                  <a href="mailto:hemi@hatinvestors.com" className="text-accent hover:underline">
-                    hemi@hatinvestors.com
-                  </a>
-                </li>
-                <li>
-                  <strong>Phone:</strong>{" "}
-                  <a href="tel:9047120271" className="text-accent hover:underline">
-                    (904) 712-0271
-                  </a>
-                </li>
-              </ul>
+              <p className="text-muted-foreground">
+                Please use the contact form on our website.
+              </p>
             </div>
           </div>
         </div>

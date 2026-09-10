@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import { MapPin, Send, CheckCircle } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
 export default function Contact() {
@@ -51,9 +51,6 @@ export default function Contact() {
               </div>
 
               {[
-                { icon: <Phone className="h-5 w-5" />, label: "Phone",       value: "(904) 712-0271",       href: "tel:9047120271" },
-                { icon: <Mail className="h-5 w-5" />,  label: "Email (Hemi)", value: "hemi@hatinvestors.com", href: "mailto:hemi@hatinvestors.com" },
-                { icon: <Mail className="h-5 w-5" />,  label: "Email (Tom)",  value: "tom@hatinvestors.com",  href: "mailto:tom@hatinvestors.com" },
                 { icon: <MapPin className="h-5 w-5" />, label: "Location",    value: "Jacksonville, FL",      href: null },
               ].map(({ icon, label, value, href }) => (
                 <div key={label} className="flex items-start gap-4 p-5 bg-white rounded-2xl shadow-sm border border-gray-100 card-glow group">

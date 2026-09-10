@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
+import { Menu, X, MapPin } from "lucide-react";
 import { useState, useEffect } from "react";
 import hatLogo from "@/assets/hat-logo.png";
 
@@ -176,24 +176,6 @@ const Layout = ({ children }: LayoutProps) => {
                 Contact Us
               </h4>
               <ul className="space-y-3">
-                <li className="flex items-center gap-3 text-sm text-white/60">
-                  <Phone className="h-4 w-4 text-[hsl(var(--gold))] shrink-0" />
-                  <a href="tel:9047120271" className="hover:text-white transition-colors">
-                    (904) 712-0271
-                  </a>
-                </li>
-                <li className="flex items-center gap-3 text-sm text-white/60">
-                  <Mail className="h-4 w-4 text-[hsl(var(--gold))] shrink-0" />
-                  <a href="mailto:hemi@hatinvestors.com" className="hover:text-white transition-colors">
-                    hemi@hatinvestors.com
-                  </a>
-                </li>
-                <li className="flex items-center gap-3 text-sm text-white/60">
-                  <Mail className="h-4 w-4 text-[hsl(var(--gold))] shrink-0" />
-                  <a href="mailto:tom@hatinvestors.com" className="hover:text-white transition-colors">
-                    tom@hatinvestors.com
-                  </a>
-                </li>
                 <li className="flex items-start gap-3 text-sm text-white/60">
                   <MapPin className="h-4 w-4 text-[hsl(var(--gold))] shrink-0 mt-0.5" />
                   <span>Jacksonville, FL</span>

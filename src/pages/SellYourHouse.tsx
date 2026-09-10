@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CheckCircle, Clock, Banknote, Home, Phone, Mail, ArrowRight, Star, Shield } from "lucide-react";
+import { CheckCircle, Clock, Banknote, Home, ArrowRight, Star, Shield } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
 const STEPS = [
@@ -51,10 +51,7 @@ export default function SellYourHouse() {
               and surrounding areas — fair offer within 24 hours.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="tel:9047120271" className="btn-gold inline-flex items-center gap-2 px-8 py-4 rounded-xl text-lg">
-                <Phone className="h-5 w-5" /> (904) 712-0271
-              </a>
-              <Link to="/contact" className="btn-outline-white inline-flex items-center gap-2 px-8 py-4 rounded-xl text-lg">
+              <Link to="/contact" className="btn-gold inline-flex items-center gap-2 px-8 py-4 rounded-xl text-lg">
                 Get My Cash Offer <ArrowRight className="h-5 w-5" />
               </Link>
             </div>
@@ -179,12 +176,9 @@ export default function SellYourHouse() {
                   No obligation, no pressure. Just a fair offer on your timeline.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
-                  <a href="tel:9047120271" className="btn-gold inline-flex items-center gap-2 px-8 py-4 rounded-xl">
-                    <Phone className="h-5 w-5" /> Call (904) 712-0271
-                  </a>
-                  <a href="mailto:hemi@hatinvestors.com" className="btn-outline-white inline-flex items-center gap-2 px-8 py-4 rounded-xl">
-                    <Mail className="h-5 w-5" /> Email Us
-                  </a>
+                  <Link to="/contact" className="btn-gold inline-flex items-center gap-2 px-8 py-4 rounded-xl">
+                    Contact Us <ArrowRight className="h-5 w-5" />
+                  </Link>
                 </div>
               </div>
             </div>
