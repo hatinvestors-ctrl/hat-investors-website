@@ -14,6 +14,9 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
+import Admin from "./pages/Admin";
+import { PresenterProvider } from "./lib/presenter";
+import { PresenterControls } from "./components/PresenterControls";
 
 const queryClient = new QueryClient();
 
@@ -22,8 +25,10 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <PresenterProvider>
       <BrowserRouter>
         <ScrollToTop />
+        <PresenterControls />
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -34,11 +39,13 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/admin" element={<Admin />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
       </BrowserRouter>
+      </PresenterProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

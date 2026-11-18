@@ -5,6 +5,21 @@ import { projects } from "@/data/projects";
 import type { FlipProject, BRRRRProject } from "@/data/projects";
 import { ArrowRight, Lock, Home, TrendingUp, Layers } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { usePresenter } from "@/lib/presenter";
+
+/**
+ * Value + hidden flag for a metric. Public visitors see the cell exactly as before;
+ * in Private Presentation Mode (numbers shown) the private value is revealed.
+ */
+function useMetric(project: FlipProject | BRRRRProject) {
+  const { active, showNumbers, financials } = usePresenter();
+  const reveal = active && showNumbers;
+  const priv = financials?.[project.title] ?? {};
+  return (field: string, publicHidden: boolean) => ({
+    value: (project as Record<string, unknown>)[field] as string | undefined ?? priv[field],
+    hidden: publicHidden && !reveal,
+  });
+}
 
 type FilterTab = "all" | "flip" | "brrrr";
 
@@ -25,25 +40,31 @@ function MetricCell({ label, value, hidden = false }: { label: string; value?: s
   );
 }
 
-const FlipMetrics = ({ project }: { project: FlipProject }) => (
+const FlipMetrics = ({ project }: { project: FlipProject }) => {
+  const m = useMetric(project);
+  const h = !!project.hideFinancials;
+  return (
   <div className="space-y-3">
     <div className="grid grid-cols-2 gap-3">
-      <MetricCell label="Purchase"          hidden />
-      <MetricCell label="Renovation"        value={project.renovation}   hidden={project.hideFinancials} />
-      <MetricCell label="HML"               value={project.hml}          hidden={project.hideFinancials} />
-      <MetricCell label="All-in Cost"       value={project.allIn}        hidden={project.hideFinancials} />
-      <MetricCell label="Sold Price"        hidden />
-      <MetricCell label="Selling & Holding" value={project.costs}        hidden={project.hideFinancials} />
-      <MetricCell label="Profit"            hidden />
-      <MetricCell label="ROI"               hidden />
+      <MetricCell label="Purchase"          {...m("purchase", true)} />
+      <MetricCell label="Renovation"        {...m("renovation", h)} />
+      <MetricCell label="HML"               {...m("hml", h)} />
+      <MetricCell label="All-in Cost"       {...m("allIn", h)} />
+      <MetricCell label="Sold Price"        {...m("sold", true)} />
+      <MetricCell label="Selling & Holding" {...m("costs", h)} />
+      <MetricCell label="Profit"            {...m("profit", true)} />
+      <MetricCell label="ROI"               {...m("roi", true)} />
     </div>
     <div className="flex items-center gap-2 text-[hsl(var(--gold))]/80 text-sm font-medium">
       <Lock className="h-3.5 w-3.5" /> Contact us for full financial details
     </div>
   </div>
-);
+  );
+};
 
-const BRRRRMetrics = ({ project }: { project: BRRRRProject }) => (
+const BRRRRMetrics = ({ project }: { project: BRRRRProject }) => {
+  const m = useMetric(project);
+  return (
   <div className="space-y-3">
     {/* Always show rent — it's the headline number */}
     <div className="bg-[hsl(var(--gold))]/10 border border-[hsl(var(--gold))]/25 rounded-xl p-4 flex items-center justify-between">
@@ -51,12 +72,12 @@ const BRRRRMetrics = ({ project }: { project: BRRRRProject }) => (
       <p className="text-2xl font-heading font-black text-white">{project.monthlyRent}</p>
     </div>
     <div className="grid grid-cols-2 gap-3">
-      <MetricCell label="Purchase Price"   hidden={project.hideFinancials} value={project.purchase} />
+      <MetricCell label="Purchase Price"   {...m("purchase", !!project.hideFinancials)} />
       <MetricCell label="Value-Add Work"   hidden={false} value={project.renovation} />
-      <MetricCell label="Market Value"     hidden />
-      <MetricCell label="Built-in Equity"  hidden />
-      <MetricCell label="Monthly Costs"    hidden />
-      <MetricCell label="Monthly Cash Flow" hidden />
+      <MetricCell label="Market Value"     {...m("marketValue", true)} />
+      <MetricCell label="Built-in Equity"  {...m("equity", true)} />
+      <MetricCell label="Monthly Costs"    {...m("monthlyCosts", true)} />
+      <MetricCell label="Monthly Cash Flow" {...m("cashFlow", true)} />
     </div>
     {project.pairedWith && (
       <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-xs text-white/50">
@@ -68,7 +89,8 @@ const BRRRRMetrics = ({ project }: { project: BRRRRProject }) => (
       <Lock className="h-3.5 w-3.5" /> Contact us for full financial details
     </div>
   </div>
-);
+  );
+};
 
 const OurProjects = () => {
   const [activeTab, setActiveTab] = useState<FilterTab>("all");
