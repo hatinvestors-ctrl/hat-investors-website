@@ -4,12 +4,13 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 
 type Financials = Record<string, Record<string, string>>;
+export type LoginResult = "ok" | "wrong-password" | "error";
 
 type PresenterState = {
   active: boolean;
   showNumbers: boolean;
   financials: Financials | null;
-  login(password: string): Promise<boolean>;
+  login(password: string): Promise<LoginResult>;
   logout(): Promise<void>;
   toggleNumbers(): void;
 };
@@ -43,7 +44,8 @@ export function PresenterProvider({ children }: { children: React.ReactNode }) {
   const fetchFinancials = useCallback(async () => {
     try {
       const res = await fetch(`${API}/financials`, { credentials: "same-origin" });
-      if (!res.ok) { clear(); return false; }
+      if (res.status === 401) { clear(); return false; } // session ended
+      if (!res.ok) return false; // temporary server error: keep current state
       const body = await res.json();
       setFinancials(body.financials);
       lastFetch.current = Date.now();
@@ -55,10 +57,11 @@ export function PresenterProvider({ children }: { children: React.ReactNode }) {
 
   const logout = useCallback(async () => {
     clear();
-    try { await fetch(`${API}/logout`, { method: "POST", credentials: "same-origin" }); } catch { /* ignore */ }
+    // keepalive: finish clearing the server cookie even if the tab is closed right away
+    try { await fetch(`${API}/logout`, { method: "POST", credentials: "same-origin", keepalive: true }); } catch { /* ignore */ }
   }, [clear]);
 
-  const login = useCallback(async (password: string) => {
+  const login = useCallback(async (password: string): Promise<LoginResult> => {
     try {
       const res = await fetch(`${API}/login`, {
         method: "POST",
@@ -66,12 +69,13 @@ export function PresenterProvider({ children }: { children: React.ReactNode }) {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ password }),
       });
-      if (!res.ok) return false;
+      if (res.status === 401) return "wrong-password";
+      if (!res.ok) return "error";
       store.set(KEY_ON, "1");
       store.set(KEY_LAST, String(Date.now()));
-      return await fetchFinancials();
+      return (await fetchFinancials()) ? "ok" : "error";
     } catch {
-      return false;
+      return "error";
     }
   }, [fetchFinancials]);
 

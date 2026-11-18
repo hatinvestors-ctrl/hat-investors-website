@@ -18,10 +18,10 @@ const Admin = () => {
     e.preventDefault();
     setBusy(true);
     setError("");
-    const ok = await login(password);
+    const result = await login(password);
     setBusy(false);
-    if (ok) navigate("/our-projects");
-    else setError("Incorrect password");
+    if (result === "ok") navigate("/our-projects");
+    else setError(result === "wrong-password" ? "Incorrect password" : "Couldn't load the numbers, please try again");
   };
 
   return (
