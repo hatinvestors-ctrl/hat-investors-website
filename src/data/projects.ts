@@ -9,19 +9,22 @@ export type FlipProject = {
   title: string;
   location?: string;
   heroImage: string;
-  purchase: string;
-  renovation: string;
-  hml: string;
-  allIn: string;
-  sold: string;
-  costs: string;
-  profit: string;
-  roi: string;
+  // Private numbers (purchase, sold, profit, roi — plus renovation, hml, allIn,
+  // costs when hideFinancials is true) live in netlify/lib/presenter-data.ts,
+  // NOT here. They are only shown in Private Presentation Mode (/admin).
+  purchase?: string;
+  renovation?: string;
+  hml?: string;
+  allIn?: string;
+  sold?: string;
+  costs?: string;
+  profit?: string;
+  roi?: string;
   layout: string;
   highlights: string;
   description: string;
   status: string;
-  /** Titles listed here will have financial figures hidden (shown as ••••••) */
+  /** Hide renovation/HML/all-in/costs from public visitors too (shown as ••••••) */
   hideFinancials?: boolean;
   images: ProjectImage[];
 };
@@ -31,14 +34,16 @@ export type BRRRRProject = {
   title: string;
   location?: string;
   heroImage: string;
-  purchase: string;
+  // Private numbers (allIn, marketValue, monthlyCosts, cashFlow, equity — plus
+  // purchase when hideFinancials is true) live in netlify/lib/presenter-data.ts.
+  purchase?: string;
   renovation: string;
-  allIn: string;
-  marketValue: string;
+  allIn?: string;
+  marketValue?: string;
   monthlyRent: string;
-  monthlyCosts: string;
-  cashFlow: string;
-  equity: string;
+  monthlyCosts?: string;
+  cashFlow?: string;
+  equity?: string;
   layout: string;
   highlights: string;
   description: string;
@@ -58,6 +63,7 @@ export type ComingSoonProject = {
 export type Project = FlipProject | BRRRRProject | ComingSoonProject;
 
 // ─── ADD NEW PROJECTS HERE ────────────────────────────────────────────────────
+// Private numbers go in netlify/lib/presenter-data.ts (same title), not here.
 // To add a flip:      copy the FlipProject block below and fill in the fields.
 // To add a BRRRR:     copy the BRRRRProject block.
 // To add coming-soon: add { type: "coming-soon", title, location, heroImage }.
@@ -71,14 +77,8 @@ export const projects: Project[] = [
     title: "2058 W 40th St",
     location: "Jacksonville, FL 32209",
     heroImage: "/projects/w40th-2058-hero.jpg",
-    purchase: "$71,000",
     renovation: "City sewer connection + HVAC + full cosmetic refresh",
-    allIn: "TBD",
-    marketValue: "TBD",
     monthlyRent: "$1,350",
-    monthlyCosts: "TBD",
-    cashFlow: "TBD",
-    equity: "TBD",
     layout: "Single-family rental",
     highlights: "Permitted city sewer connection (Certificate of Completion issued by City of Jacksonville), brand-new 2.5-ton HVAC, LVP flooring patch, updated electrical throughout, new appliances, and blinds — all permitted and inspected.",
     description: "Part of a side-by-side portfolio acquisition on W 40th St. The headline improvement here was a fully permitted city sewer connection — a $8,000 infrastructure upgrade that brought the property off a private system and onto city utilities, significantly increasing its long-term value and rentability. Beyond sewer, the renovation included a brand-new 2.5-ton HVAC system, patched LVP flooring, new electrical plates, switches, and a GFI outlet in the laundry room, new blinds and smoke detectors, second-hand refrigerator and stove, and a thorough professional clean. The Certificate of Completion was issued by the City of Jacksonville Building Inspection Division (Permit P-26-397103), confirming all work passed inspection. Tenant in place at $1,350/month — refinance planned for Q3 2026.",
@@ -92,14 +92,8 @@ export const projects: Project[] = [
     title: "2050 W 40th St",
     location: "Jacksonville, FL 32209",
     heroImage: "/projects/w40th-2050-hero.jpg",
-    purchase: "$67,000",
     renovation: "Water line connection + HVAC + windows + cosmetic refresh",
-    allIn: "TBD",
-    marketValue: "TBD",
     monthlyRent: "$1,350",
-    monthlyCosts: "TBD",
-    cashFlow: "TBD",
-    equity: "TBD",
     layout: "Single-family rental",
     highlights: "New water line connection, brand-new 2.5-ton HVAC, 4 new windows installed, full interior repaint, ceiling repairs, pressure-washed exterior, and new appliances — quickly stabilized and rented at $1,350/month.",
     description: "Adjacent to 2058 W 40th St and acquired in the same portfolio deal, this property received a targeted renovation focused on system upgrades and habitability. Work included a new water line connection ($3,000), a new 2.5-ton HVAC system, installation of 4 new windows and repair of 3 existing screens, full interior paint with ceiling issue repairs, pressure cleaning of the exterior and slab, installation of smoke detectors, and a second-hand refrigerator. The home was professionally cleaned top to bottom before tenant move-in. Rented quickly at $1,350/month — refinance planned for Q3 2026.",
@@ -114,14 +108,8 @@ export const projects: Project[] = [
     title: "9129 Tamworth Rd",
     location: "Jacksonville, FL 32208",
     heroImage: "/projects/tamworth/tamworth-before-exterior-front.jpg",
-    purchase: "Acquired below market",
     renovation: "$65,000 full renovation",
-    allIn: "TBD",
-    marketValue: "TBD — targeting high appraisal post-renovation",
     monthlyRent: "Coming Soon",
-    monthlyCosts: "TBD",
-    cashFlow: "TBD",
-    equity: "TBD",
     layout: "Converting 2 bed / 1 bath → 3 bed / 2 bath · ~1,500 sqft",
     highlights: "Full-scope BRRRR in progress: new roof, new HVAC, full kitchen gut, master suite addition with walk-in closet, all-new LVP flooring, updated electrical panel, and full interior/exterior repaint. Targeting maximum appraisal for cash-out refinance.",
     description: "9129 Tamworth Rd is a classic Jacksonville block home that HAT Investors acquired in below-market condition and is now undergoing a comprehensive renovation. The vision: convert this 2-bedroom, 1-bath property into a spacious 3-bedroom, 2-bath rental — adding a brand-new master suite with walk-in closet and en-suite bathroom in what was previously a family room addition. The $65,000 renovation scope covers every major system: a new architectural shingle roof, brand-new HVAC system, completely gutted and rebuilt kitchen with new cabinets and countertops, two fully updated bathrooms, upgraded 150-amp electrical panel, luxury vinyl plank flooring throughout all 15 interior doors, and full interior/exterior paint. Outside, landscaping and curb appeal improvements round out the transformation. Upon completion, the property will be rented and refinanced — pulling equity out to fuel the next acquisition while building long-term cash-flowing rental income.",
@@ -150,14 +138,6 @@ export const projects: Project[] = [
     title: "6226 W Pennant Dr W",
     heroImage: "/projects/pennant-hero.jpg",
     hideFinancials: true,
-    purchase: "$122,000",
-    renovation: "$65,000",
-    hml: "$14,000",
-    allIn: "$201,000",
-    sold: "$272,000",
-    costs: "$16,000",
-    profit: "$55,000",
-    roi: "132%",
     layout: "3 bed / 1 bath upgraded to 4 bed / 2 bath",
     highlights:
       "We turned Pennant into a fully renovated, modern home with all-new finishes and meticulous attention to every detail, so it looks and feels completely brand-new.",
@@ -196,14 +176,6 @@ export const projects: Project[] = [
     title: "8764 Darlington",
     heroImage: "/projects/darlington-hero-new.jpg",
     hideFinancials: true,
-    purchase: "$120,000",
-    renovation: "$76,000",
-    hml: "Cash Deal",
-    allIn: "$196,000",
-    sold: "$254,000",
-    costs: "$17,500",
-    profit: "$40,500",
-    roi: "107%",
     layout: "3 bed / 2 bath upgraded to 4 bed / 2 bath",
     highlights:
       "We took Darlington from tired and dated to a fully transformed, all-new, modern home that looks and feels completely brand new and truly move-in ready.",
@@ -243,12 +215,7 @@ export const projects: Project[] = [
     heroImage: "/projects/hafford-hero.jpg",
     purchase: "$150,000",
     renovation: "$40,000",
-    allIn: "$190,000",
-    marketValue: "$240,000",
     monthlyRent: "$1,600",
-    monthlyCosts: "$1,400",
-    cashFlow: "$200",
-    equity: "$50,000",
     layout: "Block and brick house",
     highlights:
       "Purchased at 75% of market value with light rehab. Achieved positive cash flow with expected appreciation plus built-in equity from the purchase. Successfully refinanced from Hard Money to conventional mortgage after 6 months.",
@@ -289,14 +256,10 @@ export const projects: Project[] = [
     title: "1012 Beckner Avenue",
     location: "Jacksonville, FL 32218",
     heroImage: "/projects/beckner-after-exterior-1.jpg",
-    purchase: "TBD",
     renovation: "TBD",
     hml: "TBD",
     allIn: "TBD",
-    sold: "$229,900",
     costs: "TBD",
-    profit: "TBD",
-    roi: "TBD",
     layout: "3 bed / 2 bath · 1,481 sqft",
     highlights: "Fully renovated brick ranch with all-new kitchen, modern bathrooms, new flooring throughout, and an expansive bonus room — completely move-in ready at $229,900.",
     description: "Solid brick ranch in Jacksonville completely transformed from top to bottom. The open-concept kitchen features white shaker cabinets, quartz countertops, stainless steel appliances, and a breakfast bar. Both bathrooms are fully updated with marble-tile showers, LED mirrors, and matte black fixtures. New LVP flooring runs throughout. The home also features a large bonus room — ideal as a second living space, home office, or flex room — plus a private backyard with a storage shed.",
@@ -343,14 +306,10 @@ export const projects: Project[] = [
     title: "1283 Plymouth Pl",
     location: "Jacksonville, FL 32205",
     heroImage: "/projects/plymouth-after-exterior-1.jpg",
-    purchase: "$131,000",
     renovation: "TBD",
     hml: "Hard Money — 90% LTV",
     allIn: "TBD",
-    sold: "$329,900",
     costs: "TBD",
-    profit: "TBD",
-    roi: "TBD",
     layout: "3 bed / 2 bath · full gut renovation",
     highlights: "A complete gut renovation transforming a neglected property into a stunning open-concept modern home — new siding, new roof, fully redesigned interior, spa-style master bath, and a gorgeous open kitchen/dining/living floor plan.",
     description: "Purchased below market value, this property required a full renovation from the ground up — new siding, roof, all-new plumbing and electrical, and a completely redesigned floor plan. The result is a bright, modern open-concept layout connecting the living room, dining area, and chef's kitchen. The entry features elegant marble-look tile, the master bathroom has a spa-inspired walk-in shower with body jets and premium marble tile, and every room has new LVP flooring, fresh paint, and ceiling fans. Includes an attached garage and a spacious private backyard.",
@@ -405,14 +364,10 @@ export const projects: Project[] = [
     title: "4757 Kingsbury Street",
     location: "Jacksonville, FL 32205",
     heroImage: "/projects/kingsbury-after-exterior-1.jpg",
-    purchase: "$100,000",
     renovation: "TBD",
     hml: "Cash Deal",
     allIn: "TBD",
-    sold: "$240,000",
     costs: "TBD",
-    profit: "TBD",
-    roi: "TBD",
     layout: "3 bed / 1.5 bath · full renovation",
     highlights: "A head-to-toe transformation — bold navy blue exterior, fully renovated open-concept interior with white kitchen, stainless steel appliances, stunning blue tile bathroom, and new LVP flooring throughout.",
     description: "Purchased for cash at $100,000 and completely renovated inside and out. The once-tired tan exterior was repainted a striking navy blue with new landscaping and walkway. Inside, walls were opened up to create an airy living/dining flow, the kitchen was fully rebuilt with white shaker cabinets and stainless steel appliances, and the bathroom was redesigned with bold blue subway tile and black matte fixtures.",
@@ -450,14 +405,10 @@ export const projects: Project[] = [
     title: "1550 Parrish Pl",
     location: "32205 Jacksonville FL",
     heroImage: "/projects/parrish-after-exterior.jpg",
-    purchase: "$000,000",
     renovation: "$000,000",
     hml: "$000,000",
     allIn: "$000,000",
-    sold: "$000,000",
     costs: "$000,000",
-    profit: "$000,000",
-    roi: "000%",
     layout: "TBD",
     highlights: "Description coming soon.",
     description: "Description coming soon.",
@@ -494,14 +445,6 @@ export const projects: Project[] = [
     title: "165 Toledo St",
     location: "Saint Augustine, FL 32084",
     heroImage: "/projects/toledo/toledo-after-exterior-front.jpg",
-    purchase: "TBD",
-    renovation: "TBD",
-    hml: "TBD",
-    allIn: "TBD",
-    sold: "TBD",
-    costs: "TBD",
-    profit: "TBD",
-    roi: "TBD",
     layout: "3 bed / 2 bath · attached garage · Florida room",
     highlights: "Head-to-toe renovation in Saint Augustine: open-concept living with white shaker kitchen, granite countertops, stainless steel appliances, stunning marble-tile master bathroom with rain shower, new LVP flooring throughout, and a large Florida room.",
     description: "165 Toledo St is a fully renovated 3-bedroom, 2-bathroom home in Saint Augustine, FL — completely transformed from the studs out. The open-concept floor plan connects a bright living room to a showstopper kitchen featuring white shaker cabinets, granite countertops, a breakfast bar with leather stools, and a full suite of stainless steel appliances. The master suite is a true retreat: spacious and bright with LVP flooring and a spa-worthy en-suite bathroom featuring floor-to-ceiling marble tile, a frameless walk-in shower with matte black rain head and body jets, a quartz vanity with LED mirror, and matte black fixtures throughout. A second updated bathroom serves the additional bedrooms. The home also features a large attached garage, a screened Florida room accessed through sliding glass doors off the dining area, a private backyard with lush mature trees, and new HVAC. Every finish was selected with a buyer in mind — move-in ready from day one.",
