@@ -82,7 +82,7 @@ const BRRRRMetrics = ({ project }: { project: BRRRRProject }) => {
     <div className="grid grid-cols-2 gap-3">
       <MetricCell label="Purchase Price"   {...m("purchase", !!project.hideFinancials)} />
       <MetricCell label="Value-Add Work"   hidden={false} value={project.renovation} />
-      <MetricCell label="Market Value"     {...m("marketValue", true)} />
+      <MetricCell label={project.appraised ? "Appraised Value" : "Market Value"} {...m("marketValue", true)} />
       <MetricCell label="Built-in Equity"  {...m("equity", true)} />
       <MetricCell label="Monthly Costs"    {...m("monthlyCosts", true)} />
       <MetricCell label="Monthly Cash Flow" {...m("cashFlow", true)} />

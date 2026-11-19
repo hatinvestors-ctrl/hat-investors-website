@@ -68,6 +68,21 @@ test("supplied cash invested figures", () => {
   assert.equal(c("4757 Kingsbury Street"), "TBD");
 });
 
+test("rental appraised values and rents", () => {
+  const rental = (t: string) => projects.find((p) => p.title === t) as { monthlyRent?: string; appraised?: boolean };
+  for (const [t, value, rent] of [
+    ["2050 W 40th St", "$143,000", "$1,350"],
+    ["2058 W 40th St", "$118,000", "$1,100"],
+    ["1012 Beckner Avenue", "$230,000", "$2,000"],
+  ]) {
+    assert.equal(privateFinancials[t].marketValue, value, `${t} appraised value`);
+    assert.equal(rental(t).monthlyRent, rent, `${t} rent`);
+    assert.equal(rental(t).appraised, true, `${t} label`);
+  }
+  assert.equal(rental("6855 Hafford Lane").appraised, undefined);
+  assert.equal(rental("9129 Tamworth Rd").appraised, undefined);
+});
+
 test("values moved verbatim", () => {
   assert.equal(privateFinancials["8764 Darlington"].roi, "20.7%");
   assert.equal(privateFinancials["6855 Hafford Lane"].marketValue, "$240,000");

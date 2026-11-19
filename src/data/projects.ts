@@ -42,6 +42,8 @@ export type BRRRRProject = {
   renovation: string;
   allIn?: string;
   marketValue?: string;
+  /** Label the private value box "Appraised Value" instead of "Market Value". */
+  appraised?: boolean;
   monthlyRent: string;
   monthlyCosts?: string;
   cashFlow?: string;
@@ -80,7 +82,8 @@ export const projects: Project[] = [
     location: "Jacksonville, FL 32209",
     heroImage: "/projects/w40th-2058-hero.jpg",
     renovation: "City sewer connection + HVAC + full cosmetic refresh",
-    monthlyRent: "$1,350",
+    monthlyRent: "$1,100",
+    appraised: true,
     layout: "Single-family rental",
     highlights: "Permitted city sewer connection (Certificate of Completion issued by City of Jacksonville), brand-new 2.5-ton HVAC, LVP flooring patch, updated electrical throughout, new appliances, and blinds — all permitted and inspected.",
     description: "Part of a side-by-side portfolio acquisition on W 40th St. The headline improvement here was a fully permitted city sewer connection — a $8,000 infrastructure upgrade that brought the property off a private system and onto city utilities, significantly increasing its long-term value and rentability. Beyond sewer, the renovation included a brand-new 2.5-ton HVAC system, patched LVP flooring, new electrical plates, switches, and a GFI outlet in the laundry room, new blinds and smoke detectors, second-hand refrigerator and stove, and a thorough professional clean. The Certificate of Completion was issued by the City of Jacksonville Building Inspection Division (Permit P-26-397103), confirming all work passed inspection. Tenant in place at $1,350/month — refinance planned for Q3 2026.",
@@ -96,6 +99,7 @@ export const projects: Project[] = [
     heroImage: "/projects/w40th-2050-hero.jpg",
     renovation: "Water line connection + HVAC + windows + cosmetic refresh",
     monthlyRent: "$1,350",
+    appraised: true,
     layout: "Single-family rental",
     highlights: "New water line connection, brand-new 2.5-ton HVAC, 4 new windows installed, full interior repaint, ceiling repairs, pressure-washed exterior, and new appliances — quickly stabilized and rented at $1,350/month.",
     description: "Adjacent to 2058 W 40th St and acquired in the same portfolio deal, this property received a targeted renovation focused on system upgrades and habitability. Work included a new water line connection ($3,000), a new 2.5-ton HVAC system, installation of 4 new windows and repair of 3 existing screens, full interior paint with ceiling issue repairs, pressure cleaning of the exterior and slab, installation of smoke detectors, and a second-hand refrigerator. The home was professionally cleaned top to bottom before tenant move-in. Rented quickly at $1,350/month — refinance planned for Q3 2026.",
@@ -260,6 +264,7 @@ export const projects: Project[] = [
     heroImage: "/projects/beckner-after-exterior-1.jpg",
     renovation: "Full renovation — completed",
     monthlyRent: "$2,000",
+    appraised: true,
     layout: "3 bed / 2 bath · 1,481 sqft",
     highlights: "Fully renovated brick ranch with all-new kitchen, modern bathrooms, new flooring throughout, and an expansive bonus room — renovated, refinanced, and retained as a long-term rental.",
     description: "HAT Investors acquired Beckner and completed a full renovation to improve the property and prepare it for long-term rental use. Following the renovation, the property was successfully refinanced and retained as part of HAT Investors' rental portfolio. The property is currently rented and generating monthly rental income. This project demonstrates HAT Investors' ability to acquire, renovate, refinance, and retain residential properties as long-term income-producing investments.",

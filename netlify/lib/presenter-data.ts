@@ -15,18 +15,20 @@ export type PrivateFinancials = Record<string, Record<string, string>>;
 
 export const privateFinancials: PrivateFinancials = {
   // ── RENTALS ────────────────────────────────────────────────────────────────
+  // marketValue = appraised value (shown as "Appraised Value"), supplied 2026-11-19.
   "2058 W 40th St": {
     purchase: "$71,000",
     allIn: "TBD",
-    marketValue: "TBD",
+    marketValue: "$118,000",
     monthlyCosts: "TBD",
     cashFlow: "TBD",
     equity: "TBD",
   },
+  // marketValue = appraised value (shown as "Appraised Value"), supplied 2026-11-19.
   "2050 W 40th St": {
     purchase: "$67,000",
     allIn: "TBD",
-    marketValue: "TBD",
+    marketValue: "$143,000",
     monthlyCosts: "TBD",
     cashFlow: "TBD",
     equity: "TBD",
@@ -86,12 +88,13 @@ export const privateFinancials: PrivateFinancials = {
   },
   // Rental (BRRRR), figures from HAT CRM (2026-11-19). Renovation $52,000;
   // allIn = 120,000 + 52,000 + 3,426 closing + 4,288 lender fees + 12,905 interest
-  // + 2,939 other holding. Market value is the CRM's original estimate (ARV),
-  // not a sale or refinance appraisal. Refinance figures not yet supplied.
+  // + 2,939 other holding. marketValue = appraised value $230,000 (shown as
+  // "Appraised Value"), supplied 2026-11-19; replaces the CRM's original $228,000
+  // ARV estimate. Other refinance figures not yet supplied.
   "1012 Beckner Avenue": {
     purchase: "$120,000",
     allIn: "$195,558",
-    marketValue: "$228,000",
+    marketValue: "$230,000",
     equity: "Pending refinance figures",
     monthlyCosts: "Pending refinance figures",
     cashFlow: "Pending refinance figures",
