@@ -68,11 +68,17 @@ export const privateFinancials: PrivateFinancials = {
     profit: "$40,500",
     roi: "107%",
   },
+  // Rental (BRRRR), figures from HAT CRM (2026-11-19). Renovation $52,000;
+  // allIn = 120,000 + 52,000 + 3,426 closing + 4,288 lender fees + 12,905 interest
+  // + 2,939 other holding. Market value is the CRM's original estimate (ARV),
+  // not a sale or refinance appraisal. Refinance figures not yet supplied.
   "1012 Beckner Avenue": {
-    purchase: "TBD",
-    sold: "$229,900",
-    profit: "TBD",
-    roi: "TBD",
+    purchase: "$120,000",
+    allIn: "$195,558",
+    marketValue: "$228,000 (est. ARV)",
+    equity: "Pending refinance figures",
+    monthlyCosts: "Pending refinance figures",
+    cashFlow: "Pending refinance figures",
   },
   "1283 Plymouth Pl": {
     purchase: "$131,000",
