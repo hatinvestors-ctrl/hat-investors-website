@@ -143,17 +143,20 @@ export const privateFinancials: PrivateFinancials = {
     roi: "9.4%",
   },
   // HAT CRM figures (2026-11-19). NOT CONFIRMED SOLD: sale price, selling costs,
-  // profit and ROI are expected results. hml = lender fees $4,800 + interest
-  // $15,800 (8 months). allIn = 175,000 + 1,500 closing + 4,800 + 50,000 + 15,800
-  // + 4,640 other holding. roi = profit / total cash invested $54,240.
+  // profit and ROI are expected results. REVISED ASSUMPTION: renovation reduced
+  // by $5,000 (50,000 -> 45,000), not yet confirmed as an actual expense.
+  // hml = lender fees $4,800 + interest $15,800 (8 months).
+  // allIn = 175,000 + 1,500 closing + 4,800 + 45,000 + 15,800 + 4,640 other holding.
+  // roi = profit / cash invested $49,240 (reno cash gap 10,000 -> 5,000).
+  // Not displayed: annualized ROI 100.1%; break-even $264,742; cash returned $82,100.
   "165 Toledo St": {
     purchase: "$175,000",
-    renovation: "$50,000",
+    renovation: "$45,000",
     hml: "$20,600",
-    allIn: "$251,740",
+    allIn: "$246,740",
     sold: "$300,000",
     costs: "$20,400",
-    profit: "$27,860",
-    roi: "51.4%",
+    profit: "$32,860",
+    roi: "66.7%",
   },
 };
