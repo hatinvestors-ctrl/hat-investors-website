@@ -4,6 +4,11 @@
 //
 // Keys must match the project `title` in src/data/projects.ts exactly.
 // Fields here are the ones shown as •••••• to public visitors.
+//
+// Flip cards: `cashInvested` (shown in the "Cash Invested" box) = down payment
+// + purchase closing + lender fees + investor-funded renovation + interest
+// + other holding (HAT CRM definition). roi = profit / cashInvested.
+// `hml` is kept as a record only; it is no longer displayed.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type PrivateFinancials = Record<string, Record<string, string>>;
@@ -52,21 +57,26 @@ export const privateFinancials: PrivateFinancials = {
     purchase: "$127,000",
     renovation: "$69,870",
     hml: "$16,565",
+    cashInvested: "$43,660",
     allIn: "$215,126",
     sold: "$272,000",
     costs: "$19,040",
     profit: "$37,834",
     roi: "86.7%",
   },
+  // All-cash deal: cash invested = all-in $196,000 (approved 2026-11-19).
+  // ROI recomputed 40,500 / 196,000 = 20.7% (previously shown as 107%,
+  // which did not reconcile with any documented cash figure).
   "8764 Darlington": {
     purchase: "$120,000",
     renovation: "$76,000",
     hml: "Cash Deal",
+    cashInvested: "$196,000",
     allIn: "$196,000",
     sold: "$254,000",
     costs: "$17,500",
     profit: "$40,500",
-    roi: "107%",
+    roi: "20.7%",
   },
   // Rental (BRRRR), figures from HAT CRM (2026-11-19). Renovation $52,000;
   // allIn = 120,000 + 52,000 + 3,426 closing + 4,288 lender fees + 12,905 interest
@@ -93,6 +103,7 @@ export const privateFinancials: PrivateFinancials = {
     purchase: "$131,000",
     renovation: "$76,002",
     hml: "$31,733",
+    cashInvested: "$77,836",
     allIn: "$247,836",
     sold: "$298,000",
     costs: "$35,211",
@@ -101,6 +112,7 @@ export const privateFinancials: PrivateFinancials = {
   },
   "4757 Kingsbury Street": {
     purchase: "$100,000",
+    cashInvested: "TBD", // not documented yet
     sold: "$240,000",
     profit: "TBD",
     roi: "TBD",
@@ -120,6 +132,7 @@ export const privateFinancials: PrivateFinancials = {
     purchase: "$210,000",
     renovation: "$35,000",
     hml: "$20,638",
+    cashInvested: "$59,468",
     allIn: "$272,139",
     sold: "$314,000",
     costs: "$21,980",
@@ -136,6 +149,7 @@ export const privateFinancials: PrivateFinancials = {
     purchase: "$113,500",
     renovation: "$90,000",
     hml: "Cash Deal",
+    cashInvested: "$210,243",
     allIn: "$210,243",
     sold: "$259,900",
     costs: "$29,889",
@@ -153,6 +167,7 @@ export const privateFinancials: PrivateFinancials = {
     purchase: "$175,000",
     renovation: "$45,000",
     hml: "$20,600",
+    cashInvested: "$49,240",
     allIn: "$246,740",
     sold: "$300,000",
     costs: "$20,400",

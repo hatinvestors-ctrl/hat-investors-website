@@ -48,7 +48,7 @@ const FlipMetrics = ({ project }: { project: FlipProject }) => {
     <div className="grid grid-cols-2 gap-3">
       <MetricCell label="Purchase"          {...m("purchase", true)} />
       <MetricCell label="Renovation"        {...m("renovation", h)} />
-      <MetricCell label="HML"               {...m("hml", h)} />
+      <MetricCell label="Cash Invested"     {...m("cashInvested", true)} />
       <MetricCell label="All-in Cost"       {...m("allIn", h)} />
       <MetricCell label="Sold Price"        {...m("sold", true)} />
       <MetricCell label="Selling & Holding" {...m("costs", h)} />

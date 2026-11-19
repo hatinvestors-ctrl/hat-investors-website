@@ -9,12 +9,14 @@ export type FlipProject = {
   title: string;
   location?: string;
   heroImage: string;
-  // Private numbers (purchase, sold, profit, roi — plus renovation, hml, allIn,
-  // costs when hideFinancials is true) live in netlify/lib/presenter-data.ts,
+  // Private numbers (purchase, cashInvested, sold, profit, roi — plus renovation,
+  // allIn, costs when hideFinancials is true) live in netlify/lib/presenter-data.ts,
   // NOT here. They are only shown in Private Presentation Mode (/admin).
   purchase?: string;
   renovation?: string;
+  /** No longer displayed (replaced by the private Cash Invested box). */
   hml?: string;
+  cashInvested?: string;
   allIn?: string;
   sold?: string;
   costs?: string;
