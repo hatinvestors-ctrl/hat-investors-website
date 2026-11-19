@@ -80,8 +80,8 @@ test("financials require a valid cookie", async () => {
   const res = await handler(new Request(`${BASE}/financials`, { headers: { cookie } }));
   assert.equal(res.status, 200);
   const body = await res.json();
-  assert.equal(body.financials["6226 W Pennant Dr W"].profit, "$37,834");
-  assert.equal(body.financials["6226 W Pennant Dr W"].roi, "86.7%");
+  assert.equal(body.financials["6226 W Pennant Dr W"].profit, "$42,834");
+  assert.equal(body.financials["6226 W Pennant Dr W"].roi, "99.0%");
   assert.match(res.headers.get("set-cookie") ?? "", /Max-Age=3600/);
 });
 

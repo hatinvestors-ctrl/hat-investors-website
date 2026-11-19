@@ -48,21 +48,27 @@ export const privateFinancials: PrivateFinancials = {
   },
 
   // ── FLIPS ──────────────────────────────────────────────────────────────────
-  // Final figures from HAT CRM (2026-11-19).
-  // hml = lender fees at closing $4,562 + holding interest $12,003 (7 months)
+  // REVISED PURCHASE PRICE (2026-11-19): $122,000, replacing the CRM's $127,000.
+  // Not confirmed against transaction records (the site originally showed $122,000;
+  // the CRM "final figures" said $127,000). Sale and costs are actual.
+  // Down payment kept at the actual 7.9% ratio: 10,033 -> 9,638 (-395).
+  // cashInvested = 9,638 + reno gap 15,371 + 1,691 closing + 4,562 lender fees
+  //   + 12,003 interest = 43,265. Lender costs unchanged (hml = 4,562 + 12,003).
   // allIn = purchase + $1,691 purchase closing + hml + renovation
   // costs = selling costs (commissions $16,320 + title $2,720) + $0 other holding
-  // roi = net profit / total cash invested $43,660
+  // roi = net profit / cash invested. Not displayed: annualized 169.7% (x12/7);
+  // break-even $225,942; cash returned $86,099.
+  // Previous (CRM $127,000): cash 43,660, all-in 215,126, profit 37,834, ROI 86.7%.
   "6226 W Pennant Dr W": {
-    purchase: "$127,000",
+    purchase: "$122,000",
     renovation: "$69,870",
     hml: "$16,565",
-    cashInvested: "$43,660",
-    allIn: "$215,126",
+    cashInvested: "$43,265",
+    allIn: "$210,126",
     sold: "$272,000",
     costs: "$19,040",
-    profit: "$37,834",
-    roi: "86.7%",
+    profit: "$42,834",
+    roi: "99.0%",
   },
   // All-cash deal: cash invested = all-in $196,000 (approved 2026-11-19).
   // ROI recomputed 40,500 / 196,000 = 20.7% (previously shown as 107%,

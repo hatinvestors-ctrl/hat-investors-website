@@ -59,7 +59,7 @@ test("ROI = profit / cash invested (1 decimal) on every flip box with figures", 
 
 test("supplied cash invested figures", () => {
   const c = (t: string) => privateFinancials[t].cashInvested;
-  assert.equal(c("6226 W Pennant Dr W"), "$43,660");
+  assert.equal(c("6226 W Pennant Dr W"), "$43,265");
   assert.equal(c("1283 Plymouth Pl"), "$77,836");
   assert.equal(c("165 Toledo St"), "$49,240");
   assert.equal(c("1550 Parrish Pl"), "$59,468");
