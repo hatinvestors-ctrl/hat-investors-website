@@ -80,20 +80,24 @@ export const privateFinancials: PrivateFinancials = {
     monthlyCosts: "Pending refinance figures",
     cashFlow: "Pending refinance figures",
   },
-  // HAT CRM figures (2026-11-19). NOT SOLD: sale price, selling costs, profit
-  // and ROI are projections. hml = lender fees $6,233 (incl. $1,700 extension,
-  // $500 lender title insurance) + interest $25,500 (15 months).
-  // allIn = 131,000 + 2,351 closing + 6,233 + 96,002 + 25,500 + 6,750 other holding.
-  // roi = profit / total cash invested $97,836.
+  // REVISED SCENARIO (2026-11-19): renovation reduced by $20,000 (96,002 -> 76,002),
+  // not yet confirmed as an actual expense reduction. NOT SOLD: sale price, selling
+  // costs, profit and ROI are projections. hml = lender fees $6,233 (incl. $1,700
+  // extension, $500 lender title insurance) + interest $25,500 (15 months).
+  // allIn = 131,000 + 2,351 closing + 6,233 + 76,002 + 25,500 + 6,750 other holding.
+  // roi = profit / total cash invested $77,836 (reno cash gap 43,902 -> 23,902).
+  // Not displayed: annualized ROI 15.4% (x12/15); break-even $281,665
+  // ((all-in + $10,000 other selling) / (1 - 7% commissions - title 4,351/298,000));
+  // cash returned $92,789.
   "1283 Plymouth Pl": {
     purchase: "$131,000",
-    renovation: "$96,002",
+    renovation: "$76,002 (revised scenario)",
     hml: "$31,733",
-    allIn: "$267,836",
+    allIn: "$247,836 (revised scenario)",
     sold: "$298,000 (expected)",
     costs: "$35,211 (expected)",
-    profit: "-$5,047 (projected)",
-    roi: "-5.2% (projected)",
+    profit: "$14,953 (projected)",
+    roi: "19.2% (projected)",
   },
   "4757 Kingsbury Street": {
     purchase: "$100,000",
