@@ -39,7 +39,7 @@ test("Volusia (Coming Soon) private figures reconcile", () => {
   assert.equal(projects.find((p) => p.title === "450 S Volusia St")?.type, "coming-soon");
   assert.equal(n(v.allIn), 113500 + 2243 + n(v.renovation) + 4500);
   assert.equal(n(v.profit), Math.round(n(v.sold) - 259900 * 0.115 - n(v.allIn)));
-  assert.equal(v.roi, "9.4% (expected)");
+  assert.equal(v.roi, "9.4%");
 });
 
 test("values moved verbatim", () => {

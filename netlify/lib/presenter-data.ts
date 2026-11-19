@@ -75,7 +75,7 @@ export const privateFinancials: PrivateFinancials = {
   "1012 Beckner Avenue": {
     purchase: "$120,000",
     allIn: "$195,558",
-    marketValue: "$228,000 (est. ARV)",
+    marketValue: "$228,000",
     equity: "Pending refinance figures",
     monthlyCosts: "Pending refinance figures",
     cashFlow: "Pending refinance figures",
@@ -91,13 +91,13 @@ export const privateFinancials: PrivateFinancials = {
   // cash returned $92,789.
   "1283 Plymouth Pl": {
     purchase: "$131,000",
-    renovation: "$76,002 (revised scenario)",
+    renovation: "$76,002",
     hml: "$31,733",
-    allIn: "$247,836 (revised scenario)",
-    sold: "$298,000 (expected)",
-    costs: "$35,211 (expected)",
-    profit: "$14,953 (projected)",
-    roi: "19.2% (projected)",
+    allIn: "$247,836",
+    sold: "$298,000",
+    costs: "$35,211",
+    profit: "$14,953",
+    roi: "19.2%",
   },
   "4757 Kingsbury Street": {
     purchase: "$100,000",
@@ -117,14 +117,14 @@ export const privateFinancials: PrivateFinancials = {
   // Superseded ACTUAL results (record only): purchase $218,000, renovation $46,414,
   // all-in $291,553, profit $467, ROI 0.7% on $71,682 cash, break-even $313,498.
   "1550 Parrish Pl": {
-    purchase: "$210,000 (revised scenario)",
-    renovation: "$35,000 (revised scenario)",
+    purchase: "$210,000",
+    renovation: "$35,000",
     hml: "$20,638",
-    allIn: "$272,139 (revised scenario)",
+    allIn: "$272,139",
     sold: "$314,000",
     costs: "$21,980",
-    profit: "$19,881 (revised scenario)",
-    roi: "33.4% (revised scenario)",
+    profit: "$19,881",
+    roi: "33.4%",
   },
   // Coming Soon card: these show only in Private Presentation Mode.
   // Figures supplied 2026-11-19. 100% cash, no lender fees or interest.
@@ -137,10 +137,10 @@ export const privateFinancials: PrivateFinancials = {
     renovation: "$90,000",
     hml: "Cash Deal",
     allIn: "$210,243",
-    sold: "$259,900 (expected)",
-    costs: "$29,889 (expected)",
-    profit: "$19,769 (expected)",
-    roi: "9.4% (expected)",
+    sold: "$259,900",
+    costs: "$29,889",
+    profit: "$19,769",
+    roi: "9.4%",
   },
   // HAT CRM figures (2026-11-19). NOT CONFIRMED SOLD: sale price, selling costs,
   // profit and ROI are expected results. hml = lender fees $4,800 + interest
@@ -151,9 +151,9 @@ export const privateFinancials: PrivateFinancials = {
     renovation: "$50,000",
     hml: "$20,600",
     allIn: "$251,740",
-    sold: "$300,000 (expected)",
-    costs: "$20,400 (expected)",
-    profit: "$27,860 (expected)",
-    roi: "51.4% (expected)",
+    sold: "$300,000",
+    costs: "$20,400",
+    profit: "$27,860",
+    roi: "51.4%",
   },
 };
