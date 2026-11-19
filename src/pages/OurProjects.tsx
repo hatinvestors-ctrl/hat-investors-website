@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BeforeAfterGallery } from "@/components/BeforeAfterGallery";
 import { projects } from "@/data/projects";
-import type { FlipProject, BRRRRProject } from "@/data/projects";
+import type { FlipProject, BRRRRProject, ComingSoonProject } from "@/data/projects";
 import { ArrowRight, Lock, Home, TrendingUp, Layers } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { usePresenter } from "@/lib/presenter";
@@ -60,6 +60,14 @@ const FlipMetrics = ({ project }: { project: FlipProject }) => {
     </div>
   </div>
   );
+};
+
+/** Coming Soon cards: show the flip metrics only in Private Presentation Mode, when private figures exist. */
+const ComingSoonPrivateMetrics = ({ project }: { project: ComingSoonProject }) => {
+  const { active, showNumbers, financials } = usePresenter();
+  if (!active || !showNumbers || !financials?.[project.title]) return null;
+  const asFlip = { ...project, type: "flip", hideFinancials: true } as unknown as FlipProject;
+  return <div className="mt-6 text-left"><FlipMetrics project={asFlip} /></div>;
 };
 
 const BRRRRMetrics = ({ project }: { project: BRRRRProject }) => {
@@ -220,6 +228,7 @@ const OurProjects = () => {
                         <h2 className="text-2xl md:text-3xl font-heading font-bold text-white mb-2">{project.title}</h2>
                         <p className="text-white/55 mb-6">{project.location}</p>
                         <span className="btn-gold inline-block px-6 py-3 rounded-xl font-bold">Coming Soon</span>
+                        <ComingSoonPrivateMetrics project={project} />
                       </div>
                     </div>
 

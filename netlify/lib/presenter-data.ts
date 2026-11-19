@@ -107,6 +107,22 @@ export const privateFinancials: PrivateFinancials = {
     profit: "$000,000",
     roi: "000%",
   },
+  // Coming Soon card: these show only in Private Presentation Mode.
+  // Figures supplied 2026-11-19. 100% cash, no lender fees or interest.
+  // NOT SOLD: $259,900 is the current scenario. allIn = 113,500 + 2,243 closing
+  // + 90,000 + 4,500 holding (10 x 450). Selling = 8% listing + 2.5% buyer + 1%
+  // title = 29,888.50 (shown rounded); profit 19,769 and ROI 9.4% are computed
+  // from the unrounded amount, so the boxes differ by $1 from rounded subtraction.
+  "450 S Volusia St": {
+    purchase: "$113,500",
+    renovation: "$90,000",
+    hml: "Cash Deal",
+    allIn: "$210,243",
+    sold: "$259,900 (expected)",
+    costs: "$29,889 (expected)",
+    profit: "$19,769 (expected)",
+    roi: "9.4% (expected)",
+  },
   // HAT CRM figures (2026-11-19). NOT CONFIRMED SOLD: sale price, selling costs,
   // profit and ROI are expected results. hml = lender fees $4,800 + interest
   // $15,800 (8 months). allIn = 175,000 + 1,500 closing + 4,800 + 50,000 + 15,800

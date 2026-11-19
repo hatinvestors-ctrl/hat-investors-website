@@ -33,6 +33,15 @@ test("no private field remains in the public data", () => {
   }
 });
 
+test("Volusia (Coming Soon) private figures reconcile", () => {
+  const v = privateFinancials["450 S Volusia St"];
+  const n = (s: string) => Number(s.replace(/[^0-9.-]/g, ""));
+  assert.equal(projects.find((p) => p.title === "450 S Volusia St")?.type, "coming-soon");
+  assert.equal(n(v.allIn), 113500 + 2243 + n(v.renovation) + 4500);
+  assert.equal(n(v.profit), Math.round(n(v.sold) - 259900 * 0.115 - n(v.allIn)));
+  assert.equal(v.roi, "9.4% (expected)");
+});
+
 test("values moved verbatim", () => {
   assert.equal(privateFinancials["8764 Darlington"].roi, "107%");
   assert.equal(privateFinancials["6855 Hafford Lane"].marketValue, "$240,000");
