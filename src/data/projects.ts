@@ -82,7 +82,7 @@ export const projects: Project[] = [
     location: "Jacksonville, FL 32209",
     heroImage: "/projects/w40th-2058-hero.jpg",
     renovation: "City sewer connection + HVAC + full cosmetic refresh",
-    monthlyRent: "$1,100",
+    monthlyRent: "$1,350",
     appraised: true,
     layout: "Single-family rental",
     highlights: "Permitted city sewer connection (Certificate of Completion issued by City of Jacksonville), brand-new 2.5-ton HVAC, LVP flooring patch, updated electrical throughout, new appliances, and blinds — all permitted and inspected.",
