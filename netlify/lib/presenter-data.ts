@@ -43,15 +43,20 @@ export const privateFinancials: PrivateFinancials = {
   },
 
   // ── FLIPS ──────────────────────────────────────────────────────────────────
+  // Final figures from HAT CRM (2026-11-19).
+  // hml = lender fees at closing $4,562 + holding interest $12,003 (7 months)
+  // allIn = purchase + $1,691 purchase closing + hml + renovation
+  // costs = selling costs (commissions $16,320 + title $2,720) + $0 other holding
+  // roi = net profit / total cash invested $43,660
   "6226 W Pennant Dr W": {
-    purchase: "$122,000",
-    renovation: "$65,000",
-    hml: "$14,000",
-    allIn: "$201,000",
+    purchase: "$127,000",
+    renovation: "$69,870",
+    hml: "$16,565",
+    allIn: "$215,126",
     sold: "$272,000",
-    costs: "$16,000",
-    profit: "$55,000",
-    roi: "132%",
+    costs: "$19,040",
+    profit: "$37,834",
+    roi: "86.7%",
   },
   "8764 Darlington": {
     purchase: "$120,000",
