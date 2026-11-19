@@ -105,20 +105,26 @@ export const privateFinancials: PrivateFinancials = {
     profit: "TBD",
     roi: "TBD",
   },
-  // Actual results from HAT CRM (2026-11-19) — completed and sold.
-  // hml = lender fees $5,247 + interest $15,391 (7 months).
-  // allIn = 218,000 + 6,501 closing + 5,247 + 46,414 + 15,391 (+ $0 other holding).
+  // REVISED SCENARIO (2026-11-19): purchase and renovation are revised assumptions,
+  // not confirmed actual costs. Sale price and selling costs are actual.
+  // hml = lender fees $5,247 + interest $15,391 (7 months), unchanged.
+  // allIn = 210,000 + 6,501 closing + 5,247 + 35,000 + 15,391 (+ $0 other holding).
   // costs = selling costs 7% (commissions 18,840 + title 3,140).
-  // roi = profit / total cash invested $71,682.
+  // roi = profit / cash invested $59,468 (10% down 21,000 + reno gap 11,329
+  // [35,000 - 23,671 lender reno funding] + 5,247 + 6,501 + 15,391).
+  // Not displayed: annualized ROI 57.3%; break-even $292,623 (all-in / 0.93);
+  // cash returned $79,349.
+  // Superseded ACTUAL results (record only): purchase $218,000, renovation $46,414,
+  // all-in $291,553, profit $467, ROI 0.7% on $71,682 cash, break-even $313,498.
   "1550 Parrish Pl": {
-    purchase: "$218,000",
-    renovation: "$46,414",
+    purchase: "$210,000 (revised scenario)",
+    renovation: "$35,000 (revised scenario)",
     hml: "$20,638",
-    allIn: "$291,553",
+    allIn: "$272,139 (revised scenario)",
     sold: "$314,000",
     costs: "$21,980",
-    profit: "$467",
-    roi: "0.7%",
+    profit: "$19,881 (revised scenario)",
+    roi: "33.4% (revised scenario)",
   },
   // Coming Soon card: these show only in Private Presentation Mode.
   // Figures supplied 2026-11-19. 100% cash, no lender fees or interest.
