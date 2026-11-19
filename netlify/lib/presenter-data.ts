@@ -107,14 +107,18 @@ export const privateFinancials: PrivateFinancials = {
     profit: "$000,000",
     roi: "000%",
   },
+  // HAT CRM figures (2026-11-19). NOT CONFIRMED SOLD: sale price, selling costs,
+  // profit and ROI are expected results. hml = lender fees $4,800 + interest
+  // $15,800 (8 months). allIn = 175,000 + 1,500 closing + 4,800 + 50,000 + 15,800
+  // + 4,640 other holding. roi = profit / total cash invested $54,240.
   "165 Toledo St": {
-    purchase: "TBD",
-    renovation: "TBD",
-    hml: "TBD",
-    allIn: "TBD",
-    sold: "TBD",
-    costs: "TBD",
-    profit: "TBD",
-    roi: "TBD",
+    purchase: "$175,000",
+    renovation: "$50,000",
+    hml: "$20,600",
+    allIn: "$251,740",
+    sold: "$300,000 (expected)",
+    costs: "$20,400 (expected)",
+    profit: "$27,860 (expected)",
+    roi: "51.4% (expected)",
   },
 };
