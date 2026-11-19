@@ -101,11 +101,20 @@ export const privateFinancials: PrivateFinancials = {
     profit: "TBD",
     roi: "TBD",
   },
+  // Actual results from HAT CRM (2026-11-19) — completed and sold.
+  // hml = lender fees $5,247 + interest $15,391 (7 months).
+  // allIn = 218,000 + 6,501 closing + 5,247 + 46,414 + 15,391 (+ $0 other holding).
+  // costs = selling costs 7% (commissions 18,840 + title 3,140).
+  // roi = profit / total cash invested $71,682.
   "1550 Parrish Pl": {
-    purchase: "$000,000",
-    sold: "$000,000",
-    profit: "$000,000",
-    roi: "000%",
+    purchase: "$218,000",
+    renovation: "$46,414",
+    hml: "$20,638",
+    allIn: "$291,553",
+    sold: "$314,000",
+    costs: "$21,980",
+    profit: "$467",
+    roi: "0.7%",
   },
   // Coming Soon card: these show only in Private Presentation Mode.
   // Figures supplied 2026-11-19. 100% cash, no lender fees or interest.
