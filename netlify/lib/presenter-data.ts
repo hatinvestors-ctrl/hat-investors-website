@@ -80,11 +80,20 @@ export const privateFinancials: PrivateFinancials = {
     monthlyCosts: "Pending refinance figures",
     cashFlow: "Pending refinance figures",
   },
+  // HAT CRM figures (2026-11-19). NOT SOLD: sale price, selling costs, profit
+  // and ROI are projections. hml = lender fees $6,233 (incl. $1,700 extension,
+  // $500 lender title insurance) + interest $25,500 (15 months).
+  // allIn = 131,000 + 2,351 closing + 6,233 + 96,002 + 25,500 + 6,750 other holding.
+  // roi = profit / total cash invested $97,836.
   "1283 Plymouth Pl": {
     purchase: "$131,000",
-    sold: "$329,900",
-    profit: "TBD",
-    roi: "TBD",
+    renovation: "$96,002",
+    hml: "$31,733",
+    allIn: "$267,836",
+    sold: "$298,000 (expected)",
+    costs: "$35,211 (expected)",
+    profit: "-$5,047 (projected)",
+    roi: "-5.2% (projected)",
   },
   "4757 Kingsbury Street": {
     purchase: "$100,000",
