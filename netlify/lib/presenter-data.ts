@@ -150,20 +150,24 @@ export const privateFinancials: PrivateFinancials = {
   },
   // Coming Soon card: these show only in Private Presentation Mode.
   // Figures supplied 2026-11-19. 100% cash, no lender fees or interest.
-  // NOT SOLD: $259,900 is the current scenario. allIn = 113,500 + 2,243 closing
-  // + 90,000 + 4,500 holding (10 x 450). Selling = 8% listing + 2.5% buyer + 1%
-  // title = 29,888.50 (shown rounded); profit 19,769 and ROI 9.4% are computed
-  // from the unrounded amount, so the boxes differ by $1 from rounded subtraction.
+  // NOT SOLD: $259,900 is the current scenario. REVISED ASSUMPTION (2026-11-19):
+  // renovation reduced by $20,000 (90,000 -> 70,000), not confirmed as an actual
+  // cost. allIn = 113,500 + 2,243 closing + 70,000 + 4,500 holding (10 x 450).
+  // Selling = 8% listing + 2.5% buyer + 1% title = 29,888.50 (shown rounded);
+  // profit 39,769 and ROI 20.9% are computed from the unrounded amount, so the
+  // boxes differ by $1 from rounded subtraction. Not displayed: annualized 25.1%;
+  // break-even $214,964; cash returned $230,012.
+  // Previous (renovation 90,000): all-in/cash 210,243, profit 19,769, ROI 9.4%.
   "450 S Volusia St": {
     purchase: "$113,500",
-    renovation: "$90,000",
+    renovation: "$70,000",
     hml: "Cash Deal",
-    cashInvested: "$210,243",
-    allIn: "$210,243",
+    cashInvested: "$190,243",
+    allIn: "$190,243",
     sold: "$259,900",
     costs: "$29,889",
-    profit: "$19,769",
-    roi: "9.4%",
+    profit: "$39,769",
+    roi: "20.9%",
   },
   // HAT CRM figures (2026-11-19). NOT CONFIRMED SOLD: sale price, selling costs,
   // profit and ROI are expected results. REVISED ASSUMPTION: renovation reduced

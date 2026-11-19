@@ -39,7 +39,7 @@ test("Volusia (Coming Soon) private figures reconcile", () => {
   assert.equal(projects.find((p) => p.title === "450 S Volusia St")?.type, "coming-soon");
   assert.equal(n(v.allIn), 113500 + 2243 + n(v.renovation) + 4500);
   assert.equal(n(v.profit), Math.round(n(v.sold) - 259900 * 0.115 - n(v.allIn)));
-  assert.equal(v.roi, "9.4%");
+  assert.equal(v.roi, "20.9%");
 });
 
 test("ROI = profit / cash invested (1 decimal) on every flip box with figures", () => {
@@ -63,7 +63,7 @@ test("supplied cash invested figures", () => {
   assert.equal(c("1283 Plymouth Pl"), "$77,836");
   assert.equal(c("165 Toledo St"), "$49,240");
   assert.equal(c("1550 Parrish Pl"), "$59,468");
-  assert.equal(c("450 S Volusia St"), "$210,243");
+  assert.equal(c("450 S Volusia St"), "$190,243");
   assert.equal(c("8764 Darlington"), "$196,000");
   assert.equal(c("4757 Kingsbury Street"), "TBD");
 });
